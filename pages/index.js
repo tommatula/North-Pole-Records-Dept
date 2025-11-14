@@ -121,6 +121,11 @@ export default function NorthPoleRecords() {
                 type="text"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    setShowNameInput(false);
+                  }
+                }}
                 placeholder="Your first name"
                 maxLength={30}
                 className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all text-lg"
@@ -135,81 +140,6 @@ export default function NorthPoleRecords() {
             </button>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fall {
-            0% {
-              top: -10%;
-              opacity: 0;
-            }
-            10% {
-              opacity: 1;
-            }
-            90% {
-              opacity: 1;
-            }
-            100% {
-              top: 100%;
-              opacity: 0;
-            }
-          }
-
-          @keyframes bounce-slow {
-            0%, 100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-
-          .snowflake {
-            position: fixed;
-            top: -10%;
-            z-index: 1;
-            user-select: none;
-            cursor: default;
-            animation: fall linear infinite;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.5em;
-          }
-
-          .snowfall {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-          }
-
-          .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-              radial-gradient(2px 2px at 20px 30px, white, transparent),
-              radial-gradient(2px 2px at 60px 70px, white, transparent),
-              radial-gradient(1px 1px at 50px 50px, white, transparent),
-              radial-gradient(1px 1px at 130px 80px, white, transparent),
-              radial-gradient(2px 2px at 90px 10px, white, transparent);
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            animation: twinkle 3s ease-in-out infinite;
-            opacity: 0.5;
-          }
-
-          @keyframes twinkle {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-          }
-
-          .animate-bounce-slow {
-            animation: bounce-slow 3s ease-in-out infinite;
-          }
-        `}</style>
       </div>
     );
   }
@@ -283,58 +213,6 @@ export default function NorthPoleRecords() {
             </div>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fall {
-            0% { top: -10%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-          }
-
-          .snowflake {
-            position: fixed;
-            top: -10%;
-            z-index: 1;
-            user-select: none;
-            cursor: default;
-            animation: fall linear infinite;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.5em;
-          }
-
-          .snowfall {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-          }
-
-          .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-              radial-gradient(2px 2px at 20px 30px, white, transparent),
-              radial-gradient(2px 2px at 60px 70px, white, transparent),
-              radial-gradient(1px 1px at 50px 50px, white, transparent),
-              radial-gradient(1px 1px at 130px 80px, white, transparent),
-              radial-gradient(2px 2px at 90px 10px, white, transparent);
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            animation: twinkle 3s ease-in-out infinite;
-            opacity: 0.5;
-          }
-
-          @keyframes twinkle {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-          }
-        `}</style>
       </div>
     );
   }
@@ -412,67 +290,6 @@ export default function NorthPoleRecords() {
           </p>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fall {
-          0% { top: -10%; opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { top: 100%; opacity: 0; }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-
-        .snowflake {
-          position: fixed;
-          top: -10%;
-          z-index: 1;
-          user-select: none;
-          cursor: default;
-          animation: fall linear infinite;
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 1.5em;
-        }
-
-        .snowfall {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-        }
-
-        .stars {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: 
-            radial-gradient(2px 2px at 20px 30px, white, transparent),
-            radial-gradient(2px 2px at 60px 70px, white, transparent),
-            radial-gradient(1px 1px at 50px 50px, white, transparent),
-            radial-gradient(1px 1px at 130px 80px, white, transparent),
-            radial-gradient(2px 2px at 90px 10px, white, transparent);
-          background-repeat: repeat;
-          background-size: 200px 200px;
-          animation: twinkle 3s ease-in-out infinite;
-          opacity: 0.5;
-        }
-
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
-        }
-
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }
