@@ -1,20 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Sparkles } from 'lucide-react';
 
-// Snowflake component
-const Snowflake = ({ delay, duration, left }) => (
-  <div
-    className="snowflake"
-    style={{
-      left: `${left}%`,
-      animationDelay: `${delay}s`,
-      animationDuration: `${duration}s`,
-    }}
-  >
-    ❄
-  </div>
-);
-
 export default function NorthPoleRecords() {
   const [wishList, setWishList] = useState('');
   const [analysis, setAnalysis] = useState(null);
@@ -22,14 +8,6 @@ export default function NorthPoleRecords() {
   const [userName, setUserName] = useState('');
   const [showNameInput, setShowNameInput] = useState(true);
   const [showResults, setShowResults] = useState(false);
-
-  // Generate snowflakes
-  const snowflakes = Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    delay: Math.random() * 10,
-    duration: 10 + Math.random() * 20,
-    left: Math.random() * 100,
-  }));
 
   // Animate results entrance
   useEffect(() => {
@@ -93,15 +71,8 @@ export default function NorthPoleRecords() {
   if (showNameInput) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden">
-        {/* Snowfall */}
-        <div className="snowfall">
-          {snowflakes.map(flake => (
-            <Snowflake key={flake.id} {...flake} />
-          ))}
-        </div>
-
-        {/* Stars background */}
-        <div className="stars"></div>
+        {/* Twinkling Stars background */}
+        <div className="stars-enhanced"></div>
 
         <div className="flex items-center justify-center min-h-screen p-4 relative z-10">
           <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center transform hover:scale-105 transition-transform duration-300">
@@ -147,15 +118,8 @@ export default function NorthPoleRecords() {
   if (!analysis) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden">
-        {/* Snowfall */}
-        <div className="snowfall">
-          {snowflakes.map(flake => (
-            <Snowflake key={flake.id} {...flake} />
-          ))}
-        </div>
-
-        {/* Stars */}
-        <div className="stars"></div>
+        {/* Twinkling Stars */}
+        <div className="stars-enhanced"></div>
 
         <div className="flex items-center justify-center min-h-screen p-4 relative z-10">
           <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full">
@@ -219,15 +183,8 @@ export default function NorthPoleRecords() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden p-4">
-      {/* Snowfall */}
-      <div className="snowfall">
-        {snowflakes.map(flake => (
-          <Snowflake key={flake.id} {...flake} />
-        ))}
-      </div>
-
-      {/* Stars */}
-      <div className="stars"></div>
+      {/* Twinkling Stars */}
+      <div className="stars-enhanced"></div>
 
       <div className={`max-w-4xl mx-auto relative z-10 transition-all duration-700 ${showResults ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Analysis Results */}
