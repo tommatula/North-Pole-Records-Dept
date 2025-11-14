@@ -85,7 +85,7 @@ DO NOT include any text outside the JSON. DO NOT use markdown code blocks.`;
         "anthropic-version": "2023-06-01"
       },
       body: JSON.stringify({
-        model: "claude-haiku-4-20250514",
+        model: "claude-3-5-haiku-20241022",
         max_tokens: 500,
         messages: [
           { role: "user", content: prompt }
