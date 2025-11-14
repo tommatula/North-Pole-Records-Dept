@@ -70,9 +70,10 @@ export default function NorthPoleRecords() {
 
   if (showNameInput) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden">
-        {/* Twinkling Stars background */}
-        <div className="stars-enhanced"></div>
+      <div className="min-h-screen relative overflow-hidden">
+        {/* Aurora Borealis Background */}
+        <div className="aurora-background"></div>
+        <div className="aurora-lights"></div>
 
         <div className="flex items-center justify-center min-h-screen p-4 relative z-10">
           <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center transform hover:scale-105 transition-transform duration-300">
@@ -117,9 +118,10 @@ export default function NorthPoleRecords() {
 
   if (!analysis) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden">
-        {/* Twinkling Stars */}
-        <div className="stars-enhanced"></div>
+      <div className="min-h-screen relative overflow-hidden">
+        {/* Aurora Borealis Background */}
+        <div className="aurora-background"></div>
+        <div className="aurora-lights"></div>
 
         <div className="flex items-center justify-center min-h-screen p-4 relative z-10">
           <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full">
@@ -182,9 +184,10 @@ export default function NorthPoleRecords() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 relative overflow-hidden p-4">
-      {/* Twinkling Stars */}
-      <div className="stars-enhanced"></div>
+    <div className="min-h-screen relative overflow-hidden p-4">
+      {/* Aurora Borealis Background */}
+      <div className="aurora-background"></div>
+      <div className="aurora-lights"></div>
 
       <div className={`max-w-4xl mx-auto relative z-10 transition-all duration-700 ${showResults ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Analysis Results */}
